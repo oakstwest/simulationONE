@@ -10,12 +10,12 @@ class Dashboard extends Component {
             inventoryList: []
         }
     }
-    componentWillMount() {
+    componentDidMount() {
         this.getItemList();
     }
-    componentDidUpdate() {
-        this.getItemList()
-    }
+    // componentDidUpdate() {
+    //     this.getItemList()
+    // }
     getItemList() {
         axios.get('/api/inventory').then((response) => {
             this.setState({ inventoryList: response.data });
