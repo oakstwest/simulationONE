@@ -2,7 +2,7 @@ module.exports = {
     read: (req, res, next) => {
         const dbInstance = req.app.get('db');
         
-        dbInstance.get_inventory().then((products) => res.status(200).send(products)).catch((err) => {
+        dbInstance.get_inventory().then((Products) => res.status(200).send(Products)).catch((err) => {
             res.status(500).send({ errorMessage: 'Something went wrong!' });
             console.log(err);
         });
